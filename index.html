@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning HTML - Lists</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 92px;
+            height: 84px;
+        }
+        .green-heading {
+            color: green;
+        }
+        h1 {
+            color: blue;
+            text-align: center;
+        }
+        textarea {
+            width: 100%;
+            max-width: 500px;
+        }
+        .check-button, .run-button, .try-again-button, .more-lessons-button, .answers-button {
+            padding: 10px 15px;
+            margin: 10px 0;
+            border: none;
+            cursor: pointer;
+        }
+        .check-button {
+            background-color: blue;
+            color: white;
+        }
+        .try-again-button {
+            background-color: black;
+            color: white;
+        }
+        .more-lessons-button {
+            background-color: green;
+            color: white;
+        }
+        .run-button {
+            background-color: green;
+            color: white;
+        }
+        .answers-button {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Image -->
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgTmvbQ8PO3QEmNBLuNDGJsOEha8rictP5-rmbG0qYp5qQe3QMEhoogK84OdxPgNB5iwytY-lpQT7E7AY4kpvmMGqK6CUrAHaXXhOj7CjXvKSu71HjYyy9NQ_Oh4CuCC_l97lDW3A9HF2eU670xt5mv83zx2OqCG_Is4zPpdYJ4JUaM14-2AZyEXOBktJE/w92-h84/logo.png" alt="Logo">
+
+    <!-- Lesson Title -->
+    <h1>Learning HTML: Numbering and Bullet Points</h1>
+
+    <!-- Introduction -->
+    <h2 class="green-heading">Introduction</h2>
+    <p>Welcome to the lesson on creating lists in HTML! You can use lists to organize items or information in a clear way.</p>
+
+    <!-- Explanation -->
+    <h2 class="green-heading">Explanation</h2>
+    <p>There are two main types of lists in HTML:</p>
+    <ol>
+        <li><strong>Ordered Lists</strong> - These are numbered lists created with the <code>&lt;ol&gt;</code> tag.</li>
+        <li><strong>Unordered Lists</strong> - These are bullet points created with the <code>&lt;ul&gt;</code> tag.</li>
+    </ol>
+
+    <!-- Example -->
+    <h2 class="green-heading">Example</h2>
+    <p>Let’s see an example in code:</p>
+
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;My List&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h2&gt;My Favorite Fruits&lt;/h2&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Apple&lt;/li&gt;
+        &lt;li&gt;Banana&lt;/li&gt;
+        &lt;li&gt;Cherry&lt;/li&gt;
+    &lt;/ul&gt;
+    
+    &lt;h2&gt;Top 3 Movies&lt;/h2&gt;
+    &lt;ol&gt;
+        &lt;li&gt;Inception&lt;/li&gt;
+        &lt;li&gt;The Dark Knight&lt;/li&gt;
+        &lt;li&gt;Interstellar&lt;/li&gt;
+    &lt;/ol&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    <p>When you run this code, you'll see two lists: one with bullet points for fruits and one numbered list for movies.</p>
+
+    <h2 class="green-heading">Try It Yourself!</h2>
+    <p>Type the code below and click "Run" to see how it works:</p>
+    <textarea id="codeInput" rows="10" placeholder="Write your code here...">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;My List&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h2&gt;My Favorite Fruits&lt;/h2&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Apple&lt;/li&gt;
+        &lt;li&gt;Banana&lt;/li&gt;
+        &lt;li&gt;Cherry&lt;/li&gt;
+    &lt;/ul&gt;
+    
+    &lt;h2&gt;Top 3 Movies&lt;/h2&gt;
+    &lt;ol&gt;
+        &lt;li&gt;Inception&lt;/li&gt;
+        &lt;li&gt;The Dark Knight&lt;/li&gt;
+        &lt;li&gt;Interstellar&lt;/li&gt;
+    &lt;/ol&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+    <br>
+    <button class="run-button" onclick="runCode()">Run</button>
+
+    <h2>Result:</h2>
+    <iframe id="resultFrame" style="width: 100%; height: 200px; border: 1px solid #ccc;"></iframe>
+
+    <script>
+        function runCode() {
+            var code = document.getElementById("codeInput").value;
+            var iframe = document.getElementById("resultFrame");
+            iframe.contentWindow.document.open();
+            iframe.contentWindow.document.write(code);
+            iframe.contentWindow.document.close();
+        }
+
+        function checkAnswer(exerciseNumber) {
+            var userAnswer = document.getElementById("userAnswer" + exerciseNumber).value.trim();
+            var correctAnswer = "";
+            var resultElement = document.getElementById("result" + exerciseNumber);
+
+            switch (exerciseNumber) {
+                case 1:
+                    correctAnswer = "<ul><li>List Item 1</li></ul>";
+                    break;
+                case 2:
+                    correctAnswer = "<ol><li>Numbered Item 1</li></ol>";
+                    break;
+                case 3:
+                    correctAnswer = "<ul><li>List Item 3</li></ul>";
+                    break;
+                case 4:
+                    correctAnswer = "<ol><li>Numbered Item 4</li></ol>";
+                    break;
+                case 5:
+                    correctAnswer = "<ul><li>List Item 5</li></ul>";
+                    break;
+            }
+
+            if (userAnswer === correctAnswer) {
+                resultElement.innerHTML = "<p style='color: green;'>Congratulations! That's correct.</p>";
+                document.getElementById("tryAgain" + exerciseNumber).style.display = "none";
+            } else {
+                resultElement.innerHTML = "<p style='color: red;'>Oops! That's not correct. Please try again.</p>";
+                document.getElementById("tryAgain" + exerciseNumber).style.display = "inline-block";
+            }
+        }
+
+        function tryAgain(exerciseNumber) {
+            document.getElementById("userAnswer" + exerciseNumber).value = "";
+            document.getElementById("result" + exerciseNumber).innerHTML = "";
+            document.getElementById("tryAgain" + exerciseNumber).style.display = "none";
+        }
+
+        function showAnswers() {
+            var answers = `<p>Exercise 1: <code>&lt;ul&gt;&lt;li&gt;List Item 1&lt;/li&gt;&lt;/ul&gt;</code></p>
+                            <p>Exercise 2: <code>&lt;ol&gt;&lt;li&gt;Numbered Item 1&lt;/li&gt;&lt;/ol&gt;</code></p>
+                            <p>Exercise 3: <code>&lt;ul&gt;&lt;li&gt;List Item 3&lt;/li&gt;&lt;/ul&gt;</code></p>
+                            <p>Exercise 4: <code>&lt;ol&gt;&lt;li&gt;Numbered Item 4&lt;/li&gt;&lt;/ol&gt;</code></p>
+                            <p>Exercise 5: <code>&lt;ul&gt;&lt;li&gt;List Item 5&lt;/li&gt;&lt;/ul&gt;</code></p>`;
+            document.getElementById("answersSection").innerHTML = answers;
+        }
+    </script>
+
+    <!-- Exercise 1 -->
+    <div id="exercise1" class="exercise-container">
+        <h3 class="green-heading">Exercise 1:</h3>
+        <p>Create an unordered list with the item "List Item 1".</p>
+        <textarea id="userAnswer1" rows="4" cols="50" placeholder="Write your code here..."></textarea>
+        <br><br>
+        <button class="check-button" onclick="checkAnswer(1)">Check Now</button>
+        <button id="tryAgain1" class="try-again-button" onclick="tryAgain(1)">Try Again</button>
+        <div id="result1" style="margin-top: 10px;"></div>
+    </div>
+
+    <!-- Exercise 2 -->
+    <div id="exercise2" class="exercise-container">
+        <h3 class="green-heading">Exercise 2:</h3>
+        <p>Create an ordered list with the item "Numbered Item 1".</p>
+        <textarea id="userAnswer2" rows="4" cols="50" placeholder="Write your code here..."></textarea>
+        <br><br>
+        <button class="check-button" onclick="checkAnswer(2)">Check Now</button>
+        <button id="tryAgain2" class="try-again-button" onclick="tryAgain(2)">Try Again</button>
+        <div id="result2" style="margin-top: 10px;"></div>
+    </div>
+
+    <!-- Exercise 3 -->
+    <div id="exercise3" class="exercise-container">
+        <h3 class="green-heading">Exercise 3:</h3>
+        <p>Create an unordered list with the item "List Item 3".</p>
+        <textarea id="userAnswer3" rows="4" cols="50" placeholder="Write your code here..."></textarea>
+        <br><br>
+        <button class="check-button" onclick="checkAnswer(3)">Check Now</button>
+        <button id="tryAgain3" class="try-again-button" onclick="tryAgain(3)">Try Again</button>
+        <div id="result3" style="margin-top: 10px;"></div>
+    </div>
+
+    <!-- Exercise 4 -->
+    <div id="exercise4" class="exercise-container">
+        <h3 class="green-heading">Exercise 4:</h3>
+        <p>Create an ordered list with the item "Numbered Item 4".</p>
+        <textarea id="userAnswer4" rows="4" cols="50" placeholder="Write your code here..."></textarea>
+        <br><br>
+        <button class="check-button" onclick="checkAnswer(4)">Check Now</button>
+        <button id="tryAgain4" class="try-again-button" onclick="tryAgain(4)">Try Again</button>
+        <div id="result4" style="margin-top: 10px;"></div>
+    </div>
+
+    <!-- Exercise 5 -->
+    <div id="exercise5" class="exercise-container">
+        <h3 class="green-heading">Exercise 5:</h3>
+        <p>Create an unordered list with the item "List Item 5".</p>
+        <textarea id="userAnswer5" rows="4" cols="50" placeholder="Write your code here..."></textarea>
+        <br><br>
+        <button class="check-button" onclick="checkAnswer(5)">Check Now</button>
+        <button id="tryAgain5" class="try-again-button" onclick="tryAgain(5)">Try Again</button>
+        <div id="result5" style="margin-top: 10px;"></div>
+    </div>
+
+    <!-- View Answers Button -->
+    <button class="answers-button" onclick="showAnswers()">View Answers</button>
+    <div id="answersSection" style="margin-top: 20px;"></div>
+
+    <!-- More Lessons Button -->
+    <button class="more-lessons-button" onclick="window.location.href='https://sites.google.com/view/libsignin/home'">More Lessons</button>
+
+</body>
+</html>
